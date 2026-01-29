@@ -2,11 +2,12 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(NestApplication, {
+    // เปิดใช้งาน CORS เพื่อให้ Frontend เข้าถึงได้
+    cors: true, 
+  });
   
-  // เพิ่มบรรทัดนี้เพื่อปลดล็อกให้ Next.js เข้าถึง API ได้
-  app.enableCors(); 
-  
-  await app.listen(3000);
+  // สำคัญ: ต้องระบุ Port ให้ยืดหยุ่นสำหรับ Server
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
