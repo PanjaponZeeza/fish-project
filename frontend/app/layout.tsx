@@ -133,11 +133,19 @@ export default function RootLayout({
 
                     <div className="pt-6 border-t border-white/5">
                       <h4 className="text-white font-bold uppercase tracking-[0.2em] text-xs mb-4">{lang === 'en' ? 'Developed By' : 'จัดทำโดย'}</h4>
-                      {/* --- แก้ไขข้อ 2: ข้อมูลผู้จัดทำจริง --- */}
-                      <p className="text-sm text-slate-300 font-bold mb-1">ปัญจพล พวกอินแสง</p>
-                      <p className="text-sm text-slate-300 font-bold mb-3">ศักรินทร์ บุญมา</p>
-                      <p className="text-sm text-slate-400">สาขาวิทยาการคอมพิวเตอร์</p>
-                      <p className="text-sm text-slate-400 mb-4">คณะวิทยาศาสตร์ มหาวิทยาลัยแม่โจ้</p>
+                      {/* --- แก้ไข: ปรับให้รองรับ 2 ภาษา --- */}
+                      <p className="text-sm text-slate-300 font-bold mb-1">
+                        {lang === 'en' ? 'Panjapon Puakinsang' : 'ปัญจพล พวกอินแสง'}
+                      </p>
+                      <p className="text-sm text-slate-300 font-bold mb-3">
+                        {lang === 'en' ? 'Sakarin Boonma' : 'ศักรินทร์ บุญมา'}
+                      </p>
+                      <p className="text-sm text-slate-400">
+                        {lang === 'en' ? 'Department of Computer Science' : 'สาขาวิทยาการคอมพิวเตอร์'}
+                      </p>
+                      <p className="text-sm text-slate-400 mb-4">
+                        {lang === 'en' ? 'Faculty of Science, Maejo University' : 'คณะวิทยาศาสตร์ มหาวิทยาลัยแม่โจ้'}
+                      </p>
                       <div className="inline-block px-3 py-1 bg-blue-600/10 border border-blue-600/20 rounded text-[10px] text-blue-400 font-bold uppercase tracking-widest">
                         Maejo University
                       </div>
